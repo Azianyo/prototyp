@@ -1,0 +1,27 @@
+<div class ="row">
+        <nav class="vertical-menu col-md-2">
+        <h1 class= "users-name"><a href="#">User's name</a></h1>
+        <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
+        <h2>Numb of points </h2>
+          <ul class="nav nav-sidebar">
+           <!--  <li class="active"><a href="#">Overview</a></li> -->
+            <li><a href="#">User's profile</a></li>
+            <li><a href="#">User's stats</a></li>
+          </ul>
+        </nav>
+
+<!--   <div class = "col-md-2">
+    <h1>Panel uzytkownika</h1>
+    <ul>
+      <li>Points</li>
+    </ul>
+  </div> -->
+  <div class = "col-md-9 col-md">
+    <%@photo_names.each do |name|%>
+      <%=image_tag("photos/#{name}", :class => "photo")%>
+    <% end %>
+    <div class = "return-to-top">
+      <%=image_tag("return.jpg", :class => "return-pic")%>
+    </div>
+  </div>
+</div>
