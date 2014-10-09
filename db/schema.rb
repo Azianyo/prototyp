@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008103939) do
+ActiveRecord::Schema.define(version: 20141009103052) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -32,9 +32,35 @@ ActiveRecord::Schema.define(version: 20141008103939) do
     t.datetime "updated_at"
   end
 
+  create_table "questionsets", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users_answers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users_roles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users_test_stats", force: true do |t|
+    t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
