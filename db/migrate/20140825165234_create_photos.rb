@@ -5,15 +5,5 @@ class CreatePhotos < ActiveRecord::Migration
 
       t.timestamps
     end
-
-  # if !Photo.all
-    names = Dir.glob(File.join(Rails.root,"app/assets/images/photos/*.{jpg,png}"))
-    names.each do |name|
-      image_tag("photos/#{name}")
-       photo = Photo.new
-       photo.name = n
-       photo.save
-   end
-  # end
  end
 end
