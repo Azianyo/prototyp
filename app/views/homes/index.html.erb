@@ -1,22 +1,30 @@
-<div class ="row">
-        <nav class="vertical-menu col-md-2">
-        <h1 class= "users-name"><a href="#">User's name</a></h1>
-        <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
-        <h2>Numb of points </h2>
-          <ul class="nav nav-sidebar">
-           <!--  <li class="active"><a href="#">Overview</a></li> -->
-            <li><a href="#">User's profile</a></li>
-            <li><a href="#">User's stats</a></li>
-          </ul>
-        </nav>
-
-<!--   <div class = "col-md-2">
-    <h1>Panel uzytkownika</h1>
-    <ul>
-      <li>Points</li>
+<nav class= "top-menu">
+  <div class= "drop-down">
+    <h1 class= "users-name"><a href="#">User's name</a></h1>
+    <ul class= "drop-down-content">
+      <li><a href="#">Photoshop</a></li>
+      <li><a href="#">Illustrator</a></li>
+      <li><a href="#">Web Design</a></li>
     </ul>
-  </div> -->
-  <div class = "col-md-9 col-md">
+    <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
+  </div>
+  <ul>
+    <li><a href="default.asp">Home</a></li>
+    <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
+    <li><a href="news.asp">News</a></li>
+    <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
+    <li><a href="contact.asp">Contact</a></li>
+    <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
+    <li><a href="about.asp">About</a></li>
+  </ul>
+</nav>
+
+<div class ="row">
+  <div class= "whitespace col-md-12">
+  </div>
+  <nav class="vertical-menu col-md-1">
+  </nav>
+  <div class = "col-md-8 col-md">
     <%@photo_names.each do |name|%>
       <%=image_tag("photos/#{name}", :class => "photo")%>
     <% end %>
