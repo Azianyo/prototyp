@@ -1,14 +1,16 @@
 <nav class= "top-menu">
-  <div class= "drop-down">
-    <h1 class= "users-name"><a href="#">User's name</a></h1>
-    <ul class= "drop-down-content">
-      <li><a href="#">Photoshop</a></li>
-      <li><a href="#">Illustrator</a></li>
-      <li><a href="#">Web Design</a></li>
-    </ul>
-    <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
+  <div class= "users-menu">
+      <%=image_tag("arrow-down.jpg", :class => "drop-down-img")%>
+           <ul class= "drop-down-content">
+            <li><a href="#">Photoshop</a></li>
+            <li><a href="#">Illustrator</a></li>
+            <li><a href="#">Web Design</a></li>
+          </ul>
+      </li>
+      <h1 class= "users-name"><a href="#">User's name</a></h1>
+      <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
   </div>
-  <ul>
+  <ul class= "nav-list">
     <li><a href="default.asp">Home</a></li>
     <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
     <li><a href="news.asp">News</a></li>
