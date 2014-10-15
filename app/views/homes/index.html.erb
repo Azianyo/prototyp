@@ -28,7 +28,16 @@
   </nav>
   <div class = "col-md-8 col-md">
     <%@photo_names.each do |name|%>
-      <%=image_tag("photos/#{name}", :class => "photo")%>
+      <div class = "photo-and-patients-info">
+        <%=image_tag("photos/#{name}", :class => "photo")%>
+        <div class = "patients-description">
+          Age: <br>
+          Sex:
+        </div>
+        <div class = "test-div">
+        test
+        </div>
+      </div>
     <% end %>
     <div class = "return-to-top">
       <%=image_tag("return.jpg", :class => "return-pic")%>
