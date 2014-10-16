@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016180112) do
+ActiveRecord::Schema.define(version: 20141016190644) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -59,6 +59,22 @@ ActiveRecord::Schema.define(version: 20141016180112) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "age"
+    t.string   "sex"
+    t.string   "location"
+    t.integer  "diameter"
+    t.string   "elevation"
+    t.string   "global_feature"
+    t.string   "pigment_network"
+    t.string   "streaks"
+    t.string   "blue_whitish_veil"
+    t.string   "pigmentation"
+    t.string   "hypopigmentation"
+    t.string   "regression_structures"
+    t.string   "vascular_structures"
+    t.string   "other_criteria"
+    t.string   "level_of_difficulty"
+    t.string   "management"
   end
 
   create_table "questions", force: true do |t|

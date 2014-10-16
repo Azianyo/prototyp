@@ -12,7 +12,11 @@
   margin: 1%;
   display: inline-block;
   margin: 25px;
+}
 
+.photo:hover {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
 }
 
 .patients-description {
@@ -26,21 +30,27 @@
 
 .percentage {
   height: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: absolute;
 }
 
 #percentage1 {
   background-color: green;
   width: 72%;
+  bottom: 40px;
 }
 
 #percentage2 {
   background-color: blue;
-  width:66%
+  width:66%;
+  bottom: 20px;
 }
 
 #percentage3 {
   background-color: red;
-  width:100%
+  width:100%;
+  bottom: 0;
 }
 
 // .test-div {
