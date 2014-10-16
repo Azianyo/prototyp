@@ -1,4 +1,4 @@
-ActiveAdmin.register UsersTestStats do
+ActiveAdmin.register UsersTestStat do
 
 
   # See permitted parameters documentation:

@@ -1,4 +1,4 @@
-class UsersTestStats < ActiveRecord::Base
+class UsersTestStat < ActiveRecord::Base
   belongs_to :user
   belongs_to :question
 end
