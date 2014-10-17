@@ -27,17 +27,17 @@
   <nav class="vertical-menu col-md-1">
   </nav>
   <div class = "col-md-8 col-md">
-    <%@photo_names.each do |name|%>
+    <% @photos.each do |id|%>
       <div class = "photo-and-patients-info">
-        <%=image_tag("photos/#{name}", :class => "photo")%>
+        <%=image_tag("photos/#{Photo.find(id).name}", :class => "photo")%>
         <div class = "patients-description">
-          Age: <br>
-          Sex:
-          <div class = "dummy">
-            <div class = "percentage" id = "percentage1"></div>
-            <div class = "percentage" id = "percentage2"></div>
-            <div class = "percentage" id= "percentage3"></div>
-          </div>
+          <%= "Age: #{Photo.find(id).age}"%><br>
+          <%= "Sex: #{Photo.find(id).sex}" %><br>
+          <%= "Diameter: #{Photo.find(id).diameter}" %><br>
+          <%= "Location: #{Photo.find(id).location}"%><br>
+          <div class = "percentage" id = "percentage1"></div>
+          <div class = "percentage" id = "percentage2"></div>
+          <div class = "percentage" id= "percentage3"></div>
         </div>
         <div class = "test-div">
         test
