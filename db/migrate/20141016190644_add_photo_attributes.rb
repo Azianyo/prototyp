@@ -7,7 +7,7 @@ class AddPhotoAttributes < ActiveRecord::Migration
     add_column :photos, :elevation, :string
     add_column :photos, :global_feature, :string
     add_column :photos, :pigment_network, :string
-    #add_column :photos, :dots_and_globules, :string
+    add_column :photos, :dots_and_globules, :string
     add_column :photos, :streaks, :string
     add_column :photos, :blue_whitish_veil, :string
     add_column :photos, :pigmentation, :string

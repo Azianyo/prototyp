@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016190644) do
+ActiveRecord::Schema.define(version: 20141017193803) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20141016190644) do
     t.string   "other_criteria"
     t.string   "level_of_difficulty"
     t.string   "management"
+    t.string   "dots_globules"
   end
 
   create_table "questions", force: true do |t|

@@ -1,7 +1,7 @@
 ActiveAdmin.register Photo do
 
   permit_params :name, :age, :sex, :location, :diameter, :elevation, :global_feature,
-  :pigment_network, :streaks, :blue_whitish_veil, :pigmentation,
+  :pigment_network, :dots_globules, :streaks, :blue_whitish_veil, :pigmentation,
   :hypopigmentation, :regression_structures, :vascular_structures, :other_criteria,
   :level_of_difficulty, :management
 
@@ -17,6 +17,5 @@ ActiveAdmin.register Photo do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
 
 end
