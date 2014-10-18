@@ -1,16 +1,16 @@
-<nav class= "top-menu">
-  <div class= "users-menu">
+<nav class="top-menu">
+  <div class="users-menu">
       <%=image_tag("arrow-down.jpg", :class => "drop-down-img")%>
-           <ul class= "drop-down-content">
+           <ul class="drop-down-content">
             <li><a href="#">Photoshop</a></li>
             <li><a href="#">Illustrator</a></li>
             <li><a href="#">Web Design</a></li>
           </ul>
       </li>
-      <h1 class= "users-name"><a href="#">User's name</a></h1>
+      <h1 class="users-name"><a href="#">User's name</a></h1>
       <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
   </div>
-  <ul class= "nav-list">
+  <ul class="nav-list">
     <li><a href="default.asp">Home</a></li>
     <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
     <li><a href="news.asp">News</a></li>
@@ -21,31 +21,28 @@
   </ul>
 </nav>
 
-<div class ="row">
-  <div class= "whitespace col-md-12">
+<div class="row">
+  <div class="whitespace col-md-12">
   </div>
   <nav class="vertical-menu col-md-1">
   </nav>
-  <div class = "col-md-8 col-md">
-    <% @photos.each do |id|%>
-      <div class = "photo-and-patients-info">
-        <%=image_tag("photos/#{Photo.find(id).name}", :class => "photo")%>
-        <div class = "patients-description">
-          <%= "Age: #{Photo.find(id).age}"%><br>
-          <%= "Sex: #{Photo.find(id).sex}" %><br>
-          <%= "Diameter: #{Photo.find(id).diameter}" %><br>
-          <%= "Location: #{Photo.find(id).location}"%><br>
-          <div class = "percentage" id = "percentage1"></div>
-          <div class = "percentage" id = "percentage2"></div>
-          <div class = "percentage" id= "percentage3"></div>
-        </div>
-        <div class = "test-div">
-        test
+  <div class="col-md-8 col-md">
+    <% @photos.each do |photo|%>
+      <div class="photo-and-patients-info">
+        <%=image_tag("photos/#{photo.name}", :class => "photo")%>
+        <div class="patients-description">
+          <%= "Age: #{photo.age}"%><br>
+          <%= "Sex: #{photo.sex}" %><br>
+          <%= "Diameter: #{photo.diameter}" %><br>
+          <%= "Location: #{photo.location}"%><br>
+          <div class="percentage" id="percentage1"></div>
+          <div class="percentage" id="percentage2"></div>
+          <div class="percentage" id="percentage3"></div>
         </div>
       </div>
-      <div class= "line"></div>
+      <div class="line"></div>
     <% end %>
-    <div class = "return-to-top">
+    <div class="return-to-top">
       <%=image_tag("return.jpg", :class => "return-pic")%>
     </div>
   </div>
