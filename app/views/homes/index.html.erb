@@ -47,4 +47,12 @@
       <%=image_tag("return.jpg", :class => "return-pic")%>
     </div>
   </div>
+  <div class="col-md-2 sign-up">
+    <%= form_for(User.new, :as => :user, :url => user_registration_path) do |f| %>
+       Email: <%= f.text_field :email %><br />
+       Password : <%= f.text_field :password %><br />
+       Password confirmation: <%= f.text_field :password_confirmation %> <br />
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
