@@ -17,11 +17,3 @@ jQuery(document).ready(function() {
         return false;
     })
 });
-
-
-var container= document.getElementsByTagName("vertical-menu");
-container.style.height=(window.innerHeight);
-// container.style.width=window.innerWidth;
-
-
-

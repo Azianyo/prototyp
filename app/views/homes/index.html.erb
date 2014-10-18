@@ -21,15 +21,16 @@
   </ul>
 </nav>
 
-<div class="row">
+<div class="row container">
   <div class="whitespace col-md-12">
   </div>
-  <nav class="vertical-menu col-md-1">
-  </nav>
-  <div class="col-md-8 col-md">
+  <div class="col-md-1">
+    &nbsp;
+  </div>
+  <div class="col-md-8">
     <% @photos.each do |photo|%>
       <div class="photo-and-patients-info">
-        <%=image_tag("photos/#{photo.name}", :class => "photo")%>
+        <%=image_tag(photo.picture_url, :class => "photo")%>
         <div class="patients-description">
           <%= "Age: #{photo.age}"%><br>
           <%= "Sex: #{photo.sex}" %><br>
