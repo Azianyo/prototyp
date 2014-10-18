@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+paths = Dir.glob(File.join(Rails.root, "lib/assets/photos/*.jpg"))
+paths.each do |path|
+  photo = Photo.new
+  photo.picture = File.open(path)
+  photo.save
+end
