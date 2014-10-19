@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root "dashboard#index"
+  resources :photos, only: [] do
+    resources :suites, only: [:index] do
+      resources :questions, only: [:show]
+    end
+  end
   resources :answers
-  resources :questions
 
 
   # The priority is based upon order of creation: first created -> highest priority.
