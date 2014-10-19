@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root "dashboard#index"
   resources :photos, only: [] do
     resources :suites, only: [:index] do
-      resources :questions, only: [:show]
+      resources :questions, only: [:index, :show]
     end
   end
   resources :answers

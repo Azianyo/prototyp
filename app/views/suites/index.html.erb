@@ -1,0 +1,3 @@
+<% @suites.each do |suite|%>
+<%=link_to(suite.name, photo_suite_questions_path(@photo,suite))%>
+<%end%>
