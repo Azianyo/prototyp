@@ -1,4 +1,4 @@
-ActiveAdmin.register Questionset do
+ActiveAdmin.register Suite do
 
 
   # See permitted parameters documentation:

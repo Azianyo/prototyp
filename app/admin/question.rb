@@ -1,6 +1,6 @@
 ActiveAdmin.register Question do
 
-  permit_params :content, :questionset_id
+  permit_params :content, :suite_id
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
