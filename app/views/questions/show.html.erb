@@ -1,1 +1,8 @@
+<% if @question.prev %>
+  <%= link_to("previous question", photo_suite_question_path(@photo, @suite, @question.prev))%>
+<% end %>
+<% if @question.next %>
+  <%= link_to("next question", photo_suite_question_path(@photo, @suite, @question.next))%>
+<% end %>
 
+<%=link_to("Test choice", photo_suites_path(@photo)) %>
