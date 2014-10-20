@@ -5,6 +5,9 @@ class AnswersController < ApplicationController
   # GET /answers.json
   def index
     @answers = Answer.all
+    @photo = Photo.find(params[:photo_id])
+    @suite = Suite.find(params[:suite_id])
+    @question = Question.find(params[:question_id])
   end
 
   # GET /answers/1

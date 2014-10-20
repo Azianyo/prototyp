@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   root "dashboard#index"
   resources :photos, only: [] do
     resources :suites, only: [:index] do
-      resources :questions, only: [:index, :show]
+      resources :questions, only: [:index, :show] do
+        resources :users_answers, only: [:index]
+      end
     end
   end
-  resources :answers
 
 
   # The priority is based upon order of creation: first created -> highest priority.
