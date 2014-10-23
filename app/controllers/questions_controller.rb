@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
     @photo = Photo.find(params[:photo_id])
     @suite = Suite.find(params[:suite_id])
     @question = Question.find(params[:id])
-    @answers = Array.new
+    @answers = @question.answers
+    @new_reply = Reply.new
   end
 end

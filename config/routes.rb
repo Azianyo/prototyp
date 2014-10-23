@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   root "dashboard#index"
   resources :photos, only: [] do
     resources :suites, only: [:index] do
-      resources :questions, only: [:index, :show] do
-        resources :users_answers, only: [:index]
-      end
+      resources :questions, only: [:index, :show]
     end
+  end
+
+  resources :answers, only: [] do
+    resources :replies, only: [:index, :create]
   end
 
 

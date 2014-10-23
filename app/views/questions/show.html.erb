@@ -1,5 +1,17 @@
 <%= @question.content %><br>
 
+<ul>
+  <% @answers.each do |answer| %>
+    <li>
+      <%= answer.content %><br>
+      <%= form_for([answer, Reply.new]) do |f| %>
+        <%= hidden_field_tag :redirect_url, photo_suite_question_path(@photo, @suite, @question.next) %>
+      <%= f.submit %>
+      <% end %>
+    </li>
+  <%end%>
+</ul>
+
 <% if @question.prev %>
   <%= link_to("previous question", photo_suite_question_path(@photo, @suite, @question.prev))%>
 <% end %>
@@ -7,7 +19,7 @@
   <%= link_to("next question", photo_suite_question_path(@photo, @suite, @question.next))%>
 <% end %>
 
-<%=link_to("Answers evaluation", photo_suite_question_users_answers_path(@photo, @suite, @question))%>
+<%=link_to("Answers evaluation", '#')%>
 
 <%=link_to("Test choice", photo_suites_path(@photo))%>
 
