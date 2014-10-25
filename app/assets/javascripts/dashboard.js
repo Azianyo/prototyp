@@ -21,6 +21,14 @@ jQuery(document).ready(function() {
         $('.photo-and-patients-info').hide();
         $('.' + ($(this).attr('what'))).show();
         });
- //   })
+
+    $('#remove-filter').click( function() {
+        $('.photo-and-patients-info').show();
+    });
+
+    $('.difficulty-filter').click( function() {
+        $('.photo-and-patients-info').hide();
+        $('.'+($(this).attr('what'))).show();
+    });
 
 });

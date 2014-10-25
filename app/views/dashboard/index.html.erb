@@ -29,7 +29,7 @@
   </div>
   <div class="col-md-8">
     <% @photos.each do |photo|%>
-      <div class="photo-and-patients-info <%=photo.location%>">
+      <div class="photo-and-patients-info <%=photo.location%> <%=photo.level_of_difficulty%>" >
         <%=link_to(image_tag(photo.picture_url, :class => "photo"), photo_suites_path(photo))%>
         <div class="patients-description">
           <%= "Age: #{photo.age}"%><br>
@@ -56,5 +56,7 @@
     <% end %>
     <h2 class="location-filter" what="lower_limbs">Lower limbs filter</h2>
     <h2 class="location-filter" what="upper_body"> Upper body filter</h2>
+    <h2 class= "difficulty-filter" what="high">High difficulty filter</h2>
+    <h2 id="remove-filter">Remove filter</h2>
   </div>
 </div>
