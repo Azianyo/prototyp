@@ -16,4 +16,11 @@ jQuery(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     })
+
+    $('.location-filter').click( function() {
+        $('.photo-and-patients-info').hide();
+        $('.' + ($(this).attr('what'))).show();
+        });
+ //   })
+
 });

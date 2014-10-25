@@ -29,13 +29,13 @@
   </div>
   <div class="col-md-8">
     <% @photos.each do |photo|%>
-      <div class="photo-and-patients-info">
+      <div class="photo-and-patients-info <%=photo.location%>">
         <%=link_to(image_tag(photo.picture_url, :class => "photo"), photo_suites_path(photo))%>
         <div class="patients-description">
           <%= "Age: #{photo.age}"%><br>
           <%= "Sex: #{photo.sex}" %><br>
           <%= "Diameter: #{photo.diameter}" %><br>
-          <%= "Location: #{photo.location}"%><br>
+          <%= "Location: #{photo.location}".sub!('_',' ')%><br>
           <div class="percentage" id="percentage1"></div>
           <div class="percentage" id="percentage2"></div>
           <div class="percentage" id="percentage3"></div>
@@ -54,5 +54,7 @@
        Password confirmation: <%= f.text_field :password_confirmation %> <br />
       <%= f.submit %>
     <% end %>
+    <h2 class="location-filter" what="lower_limbs">Lower limbs filter</h2>
+    <h2 class="location-filter" what="upper_body"> Upper body filter</h2>
   </div>
 </div>
