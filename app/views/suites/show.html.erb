@@ -1,0 +1,11 @@
+<%form_tag ('/replies/new_reply') do %>
+<%@questions.each do |question|%>
+  <%=question.content%></br>
+
+
+  <%question.answers.each do |answer|%>
+  <%= radio_button_tag 'answer:[#{question.id}]','#{answer.id}' %>
+
+  <%end%>
+<%end%>
+<%end%>

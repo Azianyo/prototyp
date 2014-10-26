@@ -12,4 +12,7 @@ class RepliesController < ApplicationController
     @reply = answer.replies.create(:user_id => current_user.id)
     redirect_to params[:redirect_url]
   end
+
+  def new_reply
+  end
 end

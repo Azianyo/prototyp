@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root "dashboard#index"
   resources :photos, only: [] do
-    resources :suites, only: [:index] do
+    resources :suites, only: [:index, :show] do
       resources :questions, only: [:index, :show]
     end
   end
@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :answers, only: [] do
     resources :replies, only: [:index, :create]
   end
+
+  post 'replies/new_reply'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -5,4 +5,10 @@ class SuitesController < ApplicationController
     @questions = Question.all
   end
 
+  def show
+    @suite = Suite.find(params[:id])
+    @questions = Question.includes(:answers).where(:suite_id => @suite.id)
+
+  end
+
 end
