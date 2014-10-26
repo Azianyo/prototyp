@@ -1,24 +1,27 @@
 <nav class="top-menu">
-  <div class="users-menu">
-      <%=image_tag("arrow-down.jpg", :class => "drop-down-img")%>
-           <ul class="drop-down-content">
-            <li><a href="#">Photoshop</a></li>
-            <li><a href="#">Illustrator</a></li>
-            <li><a href="#">Web Design</a></li>
-          </ul>
-      </li>
-      <h1 class="users-name"><a href="#">User's name</a></h1>
-      <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
-  </div>
-  <ul class="nav-list">
-    <li><a href="default.asp">Home</a></li>
-    <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
-    <li><a href="news.asp">News</a></li>
-    <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
-    <li><a href="contact.asp">Contact</a></li>
-    <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
-    <li><a href="about.asp">About</a></li>
-  </ul>
+  <%if current_user.present? %>
+    <div class="users-menu">
+        <%=image_tag("arrow-down.jpg", :class => "drop-down-img")%>
+             <ul class="drop-down-content">
+              <li><a href="#">Photoshop</a></li>
+              <li><a href="#">Illustrator</a></li>
+              <li><a href="#">Web Design</a></li>
+            </ul>
+        </li>
+        <h1 class="users-name"><a href="#">User's name</a></h1>
+        <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
+    </div>
+  <%else%>
+  <%end%>
+    <ul class="nav-list">
+      <li><a href="default.asp">Home</a></li>
+      <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
+      <li><a href="news.asp">News</a></li>
+      <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
+      <li><a href="contact.asp">Contact</a></li>
+      <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
+      <li><a href="about.asp">About</a></li>
+    </ul>
 </nav>
 
 <div class="row container">
@@ -51,8 +54,8 @@
     <% if !(current_user.present?) then %>
       <%= form_for(User.new, :as => :user, :url => new_user_session_path) do |f| %>
          Email: <%= f.text_field :email %><br />
-         Password : <%= f.text_field :password %><br />
-         Password confirmation: <%= f.text_field :password_confirmation %> <br />
+         Password : <%= f.password_field :password %><br />
+         Password confirmation: <%= f.password_field :password_confirmation %> <br />
         <%= f.submit %>
       <% end %>
     <%else%>
