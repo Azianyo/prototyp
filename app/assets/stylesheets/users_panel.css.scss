@@ -43,14 +43,14 @@
   position: relative;
 }
 
-li {
+.nav_list li {
   display: inline;
   margin-right: 10px;
   margin-left: 10px;
-}
 
-li:hover {
-  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .nav_list {
