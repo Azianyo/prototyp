@@ -13,6 +13,10 @@ class RepliesController < ApplicationController
     redirect_to params[:redirect_url]
   end
 
-  def new_reply
+  def submit
+    params[:answer].each do |key,value|
+      Reply.create(:answer_id => value, :user_id => current_user.id)
+    end
+    redirect_to root_path
   end
 end

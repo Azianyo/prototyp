@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :replies, only: [:index, :create]
   end
 
-  post 'replies/new_reply'
+  post 'replies/submit'
 
 
 
