@@ -9,9 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :answers, only: [] do
-    resources :replies, only: [:index, :create]
-  end
+  resources :replies, only: [:index, :create]
 
   post 'replies/submit'
 

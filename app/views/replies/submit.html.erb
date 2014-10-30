@@ -1,0 +1,4 @@
+  <%@answers.each do |answer|%>
+    <%=Question.find(answer.question_id).content%><br>
+    <%= answer.content%><br>
+  <%end%>
