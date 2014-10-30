@@ -6,8 +6,8 @@ class SuitesController < ApplicationController
   end
 
   def show
-    @photo = Photo.find(params[:photo_id])
     @suite = Suite.find(params[:id])
+    @photo = Photo.find(params[:photo_id])
     @questions = Question.includes(:answers).where(:suite_id => @suite.id)
 
   end

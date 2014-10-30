@@ -17,8 +17,11 @@ class RepliesController < ApplicationController
     @replies = []
     @questions = []
     @answers = []
+    @photo = Photo.find(params[:photo_id])
     params[:answer].each_with_index do |(key,value),index|
       Reply.create(:answer_id => value, :user_id => current_user.id)
+      if @photo.send(Question.find(key).parameter) == Answer.find(value) then
+      end
       @answers << Answer.find(value)
     end
   end
