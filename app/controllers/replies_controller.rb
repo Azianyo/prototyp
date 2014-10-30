@@ -14,13 +14,12 @@ class RepliesController < ApplicationController
   end
 
   def submit
-    @new_replies = Array.new(params[:answer].length-1)
-    @questions =  Array.new(params[:answer].length-1)
-    @answers =  Array.new(params[:answer].length-1)
+    @replies = []
+    @questions = []
+    @answers = []
     params[:answer].each_with_index do |(key,value),index|
-      @new_replies[index] = Reply.create(:answer_id => value, :user_id => current_user.id)
-      @answers[index] = Answer.find(value)
-      @questions[index] = Question.find(key)
+      Reply.create(:answer_id => value, :user_id => current_user.id)
+      @answers << Answer.find(value)
     end
   end
 end

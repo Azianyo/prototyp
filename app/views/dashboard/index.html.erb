@@ -8,7 +8,7 @@
               <li><a href="#">Web Design</a></li>
             </ul>
         </li>
-        <h1 class="users-name"><a href="#">User's name</a></h1>
+        <h1 class="users-name"><%=link_to("#{current_user.name}", user_path(current_user))%></a></h1>
         <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
     </div>
   <%else%>
@@ -16,7 +16,7 @@
     <ul class="nav-list">
       <li><a href="default.asp">Home</a></li>
       <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
-      <li><a href="news.asp">News</a></li>
+      <li><%=link_to("Sign up", new_user_registration_path)%></li>
       <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
       <li><a href="contact.asp">Contact</a></li>
       <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
@@ -58,6 +58,7 @@
          Password confirmation: <%= f.password_field :password_confirmation %> <br />
         <%= f.submit %>
       <% end %>
+      <%=link_to("Sign up", new_user_registration_path)%>
     <%else%>
       <%=link_to("Log out", destroy_user_session_path, method: :delete) %>
     <%end%>
