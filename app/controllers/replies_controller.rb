@@ -21,6 +21,13 @@ class RepliesController < ApplicationController
     params[:answer].each_with_index do |(key,value),index|
       Reply.create(:answer_id => value, :user_id => current_user.id)
       if @photo.send(Question.find(key).parameter) == Answer.find(value) then
+        if @photo.level_of_difficulty == "high" then
+        UsersTestStat.create(:user_id => current_user.id, :question_id => key,:points => 5)
+        elsif @photo.level_of_difficulty == "low" then
+          UsersTestStat.create(:user_id => current_user.id, :question_id => key, :points => 2)
+        end
+      else
+        UsersTestStat.create(:user_id => current_user.id, :question_id => key, :points => 0)
       end
       @answers << Answer.find(value)
     end
