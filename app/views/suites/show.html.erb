@@ -4,7 +4,7 @@
     <%=question.content%></br>
 
     <ul>
-      <%question.answers.each do |answer|%>
+      <%question.answers.where(:photo_id => @photo.id).each do |answer|%>
         <li>
           <%= radio_button_tag "answer[#{question.id}]","#{answer.id}" %>
           <%= answer.content %>
