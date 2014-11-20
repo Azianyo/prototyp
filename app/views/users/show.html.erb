@@ -1,6 +1,6 @@
 <%= current_user.name %>
 User's points: <%= @users_points%></br>
-
+User's percentage: <%= @users_percentage %></br>
 Recently done photos:</br>
 <% @photos_done.each do |photo| %>
   <%= image_tag(photo.picture_url, :class => "photo")%>
