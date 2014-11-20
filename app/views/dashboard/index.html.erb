@@ -39,12 +39,14 @@
           <%= "Sex: #{photo.sex}" %><br>
           <%= "Diameter: #{photo.diameter}" %><br>
           <%= "Location: #{photo.location}".sub!('_',' ')%><br>
-          <div class="percentage" id="percentage1" style= "width:
-          <%= UsersTestStat.percentage("7-point checklist", current_user.id, photo.id)%>%"></div>
-          <div class="percentage" id="percentage2" style= "width:
-          <%= UsersTestStat.percentage("ABCD method", current_user.id, photo.id)%>%"></div>
-          <div class="percentage" id="percentage3"style= "width:
-          <%= UsersTestStat.percentage("Type of disease", current_user.id, photo.id)%>%"></div>
+          <% if (current_user.present?) then %>
+            <div class="percentage" id="percentage1" style= "width:
+            <%= UsersTestStat.percentage("7-point checklist", current_user.id, photo.id)%>%"></div>
+            <div class="percentage" id="percentage2" style= "width:
+            <%= UsersTestStat.percentage("ABCD method", current_user.id, photo.id)%>%"></div>
+            <div class="percentage" id="percentage3"style= "width:
+            <%= UsersTestStat.percentage("Type of disease", current_user.id, photo.id)%>%"></div>
+          <%end%>
         </div>
       </div>
       <div class="line"></div>
