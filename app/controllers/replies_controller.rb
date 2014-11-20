@@ -18,7 +18,6 @@ class RepliesController < ApplicationController
     @points = 0
     @suite_ids = []
     @answers = []
-    @current_lap = 1
     @max_points = 0
 
     case @photo.level_of_difficulty
@@ -49,16 +48,12 @@ class RepliesController < ApplicationController
     if UsersTestStat.exists?(:user_id => current_user.id, :suite_id => @suite_ids.last, :photo_id => @photo.id)
       @prev_stats = UsersTestStat.where(:user_id => current_user.id,
        :suite_id => @suite_ids.last, :photo_id => @photo.id)
-      @last_lap = @prev_stats.order("times_done").last.times_done
-      @current_lap = @last_lap + 1
-      UsersTestStat.create(:user_id => current_user.id, :suite_id => @suite_ids.last,
-       :photo_id => @photo.id, :points => @points, :percent => ((Float(@points)/Float(@max_points))*100),
-       :times_done => @current_lap)
+
+      UsersTestStat.find_by(:user_id => current_user.id, :suite_id => @suite_ids.last,
+       :photo_id => @photo.id).update( :points => @points, :percent => ((Float(@points)/Float(@max_points))*100))
     else
-      @current_lap = 0
       UsersTestStat.create(:user_id => current_user.id, :suite_id => @suite_ids.last,
-       :photo_id => @photo.id, :points => @points, :percent => ((Float(@points)/Float(@max_points))*100),
-       :times_done => @current_lap)
+       :photo_id => @photo.id, :points => @points, :percent => ((Float(@points)/Float(@max_points))*100))
     end
   end
 end
