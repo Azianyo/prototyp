@@ -1,6 +1,7 @@
 <%= current_user.name %>
-User's points: <%= @users_points%>
+User's points: <%= @users_points%></br>
 
+Recently done photos:</br>
 <% @photos_done.each do |photo| %>
   <%= image_tag(photo.picture_url, :class => "photo")%>
 <%end%>
