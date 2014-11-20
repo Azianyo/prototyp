@@ -6,7 +6,7 @@
     <ul>
       <%question.answers.where(:photo_id => @photo.id).each do |answer|%>
         <li>
-          <%= radio_button_tag "answer[#{question.id}]","#{answer.id}" %>
+          <%= radio_button_tag "answer[#{question.id}]","#{answer.id}", :required => true%>
           <%= answer.content %>
         </li>
       <%end%>
@@ -14,3 +14,5 @@
   <%end%>
   <%= submit_tag ("Submit")%>
 <%end%>
+<%= link_to "Choose test",photo_suites_path%>
+<%= link_to "Choose photo",root_path%>

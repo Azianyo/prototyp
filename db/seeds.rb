@@ -10,30 +10,87 @@
 paths = Dir.glob(File.join(Rails.root, "lib/assets/photos/*.jpg"))
 paths.each do |path|
   photo = Photo.new
+  photo.name = path.partition("/lib/assets/photos/")[2]
   photo.picture = File.open(path)
   photo.save
 end
 
-Suite.create!([
-  {name: "7-point checklist"},
-  {name: "ABCD method"},
-  {name: "Type of disease"}
-])
-Answer.create!([
-  {content: "diffuse regular", anything: nil, question_id: 2, photo_id: 16},
-  {content: "regular", anything: nil, question_id: 3, photo_id: 16},
-  {content: "regular", anything: nil, question_id: 4, photo_id: 16},
-  {content: "diffuse regular", anything: nil, question_id: 5, photo_id: 16},
-  {content: "regular", anything: nil, question_id: 2, photo_id: 16}
-])
+
+photo_list = [
+  [ "1.jpg", 34, "female", "lower_limbs", 4, "palpable", "homogeneous pattern", "absent", "absent", "absent", "diffuse irregular", "absent", "absent", "absent", "absent", "low", "no further examination", "absent"],
+  [ "2.jpg", 18, "male", "acral", 5, "nodular", "homogeneous pattern", "absent", "absent", "absent", "diffuse irregular", "absent", "absent", "absent", "absent", "low", "no further examination", "regular"],
+  [ "3.jpg", 34, "female", "back", 3, "palpable", "homogeneous pattern", "absent", "absent", "absent", "diffuse regular", "absent", "absent", "absent", "absent", "low", "no further examination", "absent"],
+  [ "4.jpg", 32, "female", "lower_limbs", 8, "nodular", "homogeneous pattern", "absent", "absent", "absent", "diffuse irregular", "absent", "absent", "absent", "absent", "high", "excision", "absent"],
+  [ "5.jpg", 31, "male", "upper_limbs", 10, "nodular", "homogeneous pattern", "absent", "absent", "absent", "diffuse irregular", "multifocal", "absent", "absent", "absent", "high", "excision", "absent"],
+  [ "6.jpg", 15, "female", "upper_limbs", 8, "palpable", "homogeneous pattern", "absent", "absent", "absent", "diffuse irregular", "multifocal", "absent", "absent", "absent", "medium", "excision", "absent"],
+  [ "7.jpg", 46, "female", "lower_limbs", 5, "nodular", "homogeneous pattern", "absent", "absent", "absent", "diffuse regular", "absent", "absent", "absent", "absent", "low", "no further examination", "absent"]
+]
+
+photo_list.each do |name, age, sex, location, diameter, elevation, global_feature,
+ pigment_network, streaks, blue_whitish_veil, pigmentation, hypopigmentation,
+  regression_structures, vascular_structures, other_criteria, level_of_difficulty,
+   management, dots_globules|
+    Photo.find_by(:name => name).update( age: age, sex: sex,
+     location: location, diameter: diameter, elevation: elevation,
+     global_feature: global_feature, pigment_network: pigment_network,
+     streaks: streaks, blue_whitish_veil: blue_whitish_veil, pigmentation: pigmentation,
+     hypopigmentation: hypopigmentation, regression_structures: regression_structures,
+     vascular_structures: vascular_structures, other_criteria: other_criteria,
+     level_of_difficulty: level_of_difficulty, management: management,
+     dots_globules: dots_globules )
+end
+
+Suite.where(name: "7-point checklist").first_or_create
+Suite.where(name: "ABCD method").first_or_create
+Suite.where(name: "Type of disease").first_or_create
+
+
+point_check_id = Suite.find_by(name: "7-point checklist").id
+ABCD_id = Suite.find_by(name: "ABCD method").id
+disease_id = Suite.find_by(name: "Type of disease").id
+
+
+question_list = [
+  [ "Evaluate the pigment network of the nevus:", point_check_id, "pigment_network"],
+  [ "Evaluate the streaks of the nevus:", point_check_id, "streaks"],
+  [ "Evaluate the blue-whitish veil of the nevus:", point_check_id, "blue_whitish_veil"],
+  [ "Evaluate the pigmentation of the nevus:", point_check_id, "pigmentation"],
+  [ "Evaluate the regression structures of the nevus:", point_check_id, "regression_structures"],
+  [ "Evaluate the vascular structures of the nevus:", point_check_id, "vascular_structures"],
+  [ "Evaluate the dots and globules of the nevus:", point_check_id, "dots_globules"],
+  [ "What is the proper management of the nevus?", point_check_id, "management"],
+]
+
+question_list.each do |content, suite_id, parameter|
+  Question.where(content: content).first_or_create( suite_id: suite_id, parameter: parameter)
+end
+
+Photo.all.pluck(:id).each do |photo_id|
+  Question.all.each do |question|
+    if(question.suite_id == point_check_id) then
+      if (question.parameter == "pigmentation") then
+        Answer.where(content: "diffuse regular", question_id: question.id, photo_id: photo_id).first_or_create
+        Answer.where(content: "diffuse irregular", question_id: question.id, photo_id: photo_id).first_or_create
+      elsif (question.parameter == "management") then
+        Answer.where(content: "no further examination", question_id: question.id, photo_id: photo_id).first_or_create
+        Answer.where(content: "excision", question_id: question.id, photo_id: photo_id).first_or_create
+      else
+        Answer.where(content: "absent", question_id: question.id, photo_id: photo_id).first_or_create
+        Answer.where(content: "regular", question_id: question.id, photo_id: photo_id).first_or_create
+        Answer.where(content: "irregular", question_id: question.id, photo_id: photo_id).first_or_create
+      end
+    end
+    if(question.suite_id == ABCD_id) then
+    end
+    if(question.suite_id == disease_id) then
+    end
+  end
+end
+
 UsersTestStat.create!([
   {points: 5, user_id: 1, question_id: 1}
 ])
-Question.create!([
-  {content: "Evaluate the pigmentation of the nevus", suite_id: 3},
-  {content: "Evaluate the blue-whitish veil of the nevus", suite_id: 3},
-  {content: "Evaluate the pigment network of the nevus", suite_id: 3}
-])
+
 Reply.create!([
   {answer_id: 2, user_id: 2},
   {answer_id: 2, user_id: 2},
