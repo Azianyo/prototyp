@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120005749) do
+ActiveRecord::Schema.define(version: 20141120012726) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -133,7 +133,7 @@ ActiveRecord::Schema.define(version: 20141120005749) do
     t.integer  "suite_id"
     t.integer  "photo_id"
     t.integer  "times_done"
-    t.integer  "percent"
+    t.float    "percent"
   end
 
 end
