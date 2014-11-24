@@ -1,7 +1,10 @@
-<%= current_user.name %>
+<%= @user.name %>
 User's points: <%= @users_points%></br>
 User's percentage: <%= @users_percentage %></br>
 Recently done photos:</br>
+<% if current_user.present? then%>
+    <%= link_to("Change my password", edit_user_password_path)%> </br>
+<% end %>
 <% @photos_done.each do |photo| %>
   <%= image_tag(photo.picture_url, :class => "photo")%>
 <%end%>

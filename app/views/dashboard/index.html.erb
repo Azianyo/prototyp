@@ -63,14 +63,14 @@
          Password confirmation: <%= f.password_field :password_confirmation %> <br />
         <%= f.submit %>
       <% end %>
-      <%=link_to("Sign up", new_user_registration_path)%>
+      <%=link_to("Forgot password?", new_user_password_path)%>
     <%else%>
       <%=link_to("Log out", destroy_user_session_path, method: :delete) %>
     <%end%>
 
     <h2 class="location-filter" what="lower_limbs">Lower limbs filter</h2>
     <h2 class="location-filter" what="upper_body"> Upper body filter</h2>
-    <h2 class= "difficulty-filter" what="high">High difficulty filter</h2>
+    <h2 class="difficulty-filter" what="high">High difficulty filter</h2>
     <h2 id="remove-filter">Remove filter</h2>
   </div>
 </div>
