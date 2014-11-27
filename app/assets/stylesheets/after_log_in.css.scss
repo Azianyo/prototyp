@@ -6,7 +6,7 @@
 }
 
 
-.photo {
+.photo-log-in {
   width: 200px;
   height: 200px;
   margin: 1%;
@@ -14,9 +14,17 @@
   margin: 25px;
 }
 
-.photo:hover {
+.photo-log-in:hover {
   opacity: 0.4;
   filter: alpha(opacity=40);
+}
+
+.photo-no-log-in {
+  width: 200px;
+  height: 200px;
+  margin: 1%;
+  display: inline-block;
+  margin: 25px;
 }
 
 .patients-description {
