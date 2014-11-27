@@ -1,3 +1,4 @@
+<%= image_tag(@photo.picture_url, :id => "big-photo")%>
 <%=form_tag ('/replies/submit') do %>
   <%=hidden_field_tag "photo_id","#{@photo.id}"%>
   <%@questions.each do |question|%>
@@ -16,4 +17,4 @@
 <%end%>
 <%= link_to "Choose test",photo_suites_path%>
 <%= link_to "Choose photo",root_path%>
-<%= image_tag(@photo.picture_url, :id => "big-photo")%>
+

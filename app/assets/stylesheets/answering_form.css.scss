@@ -1,4 +1,10 @@
 #big-photo{
+  width: 200px;
+  height: 200px;
   float: right;
-  float: top;
+}
+
+#big-photo:hover {
+  width: 100%;
+  height: 100%;
 }
