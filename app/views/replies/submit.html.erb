@@ -1,6 +1,12 @@
   <%@answers.each do |answer|%>
     <%=Question.find(answer.question_id).content%><br>
-    <%= answer.content%><br>
+    <%= answer.content%>
+    <%if @photo.send(Question.find(answer.question_id).parameter) == answer.content then%>
+      YAY
+    <%else%>
+      BOO
+    <%end%>
+    <br>
   <%end%>
 
   <%=link_to("Home page", root_path)%><br>
