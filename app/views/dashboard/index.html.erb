@@ -34,7 +34,7 @@
     <% @photos.each do |photo|%>
       <div class="photo-and-patients-info <%=photo.location%> <%=photo.level_of_difficulty%>" >
         <% if current_user.present? then %>
-          <%=link_to(image_tag(photo.picture_url, :class => "photo-log-in"), photo_suites_path(photo))%>
+          <%=link_to(image_tag(photo.picture_url, :class => "photo-log-in"), photo_suites_path(photo), :id => "photo-link")%>
         <% else %>
           <%=image_tag(photo.picture_url, :class => "photo-no-log-in")%>
         <%end%>
