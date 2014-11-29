@@ -42,15 +42,19 @@
           <%= "Age: #{photo.age}"%><br>
           <%= "Sex: #{photo.sex}" %><br>
           <%= "Diameter: #{photo.diameter}" %><br>
-          <%= "Location: #{photo.location}".sub!('_',' ')%><br>
+          <%= "Location: #{photo.location}".sub('_',' ')%>
           <% if (current_user.present?) then %>
+            <p>7-points checklist:</p>
             <div class="percentage" id="percentage1" style= "width:
-            <%= UsersTestStat.percentage("7-point checklist", current_user.id, photo.id)%>%"></div>
+            <%= UsersTestStat.percentage("7-point checklist", current_user.id, photo.id)%>"></div>
+            <p>ABCD method:</p>
             <div class="percentage" id="percentage2" style= "width:
-            <%= UsersTestStat.percentage("ABCD method", current_user.id, photo.id)%>%"></div>
+            <%= UsersTestStat.percentage("ABCD method", current_user.id, photo.id)%>"></div>
+            <p>Type of disease:<br></p>
             <div class="percentage" id="percentage3"style= "width:
-            <%= UsersTestStat.percentage("Type of disease", current_user.id, photo.id)%>%"></div>
+            <%= UsersTestStat.percentage("Type of disease", current_user.id, photo.id)%>"></div>
           <%end%>
+
         </div>
       </div>
       <div class="line"></div>
