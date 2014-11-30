@@ -1,13 +1,13 @@
-<%= @user.name %>
+<%= @user.name %></br>
 User's points: <%= @users_points%></br>
 User's percentage: <%= @users_percentage %></br>
-Recently done photos:</br>
+<%= link_to("Change my password", edit_user_password_path)%> </br>
 <% if current_user.present? then%>
-    <%= link_to("Change my password", edit_user_password_path)%> </br>
+    Recently done photos:</br>
+    <% @photos_done.each do |photo| %>
+      <%= image_tag(photo.picture_url, :class => "photo-log-in")%></br>
+    <%end%>
 <% end %>
-<% @photos_done.each do |photo| %>
-  <%= image_tag(photo.picture_url, :class => "photo")%>
-<%end%>
 
 <% if current_user.present? && @user == current_user then%>
   <%= link_to "Destroy", user_path(@user), method: :delete, data: { confirm: "You sure?" } %>

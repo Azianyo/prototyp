@@ -12,4 +12,21 @@ class UsersTestStat < ActiveRecord::Base
       "#{UsersTestStat.find_by(:user_id => user_id, :photo_id => photo_id, :suite_id => Suite.find_by(:name => suite_name).id).percent}%"
     end
   end
+
+  def self.percent_outside(suite_name, user_id, photo_id)
+    if UsersTestStat.find_by(:user_id => user_id, :photo_id => photo_id, :suite_id => Suite.find_by(:name => suite_name).id).nil? then
+      "0%"
+    elsif UsersTestStat.find_by(:user_id => user_id, :photo_id => photo_id, :suite_id => Suite.find_by(:name => suite_name).id).percent < 10 then
+      "#{UsersTestStat.find_by(:user_id => user_id, :photo_id => photo_id, :suite_id => Suite.find_by(:name => suite_name).id).percent}%"
+    else
+    end
+  end
+
+  def self.percent_inside(suite_name, user_id, photo_id)
+    if UsersTestStat.find_by(:user_id => user_id, :photo_id => photo_id, :suite_id => Suite.find_by(:name => suite_name).id).nil? then
+    elsif UsersTestStat.find_by(:user_id => user_id, :photo_id => photo_id, :suite_id => Suite.find_by(:name => suite_name).id).percent > 10 then
+      "#{UsersTestStat.find_by(:user_id => user_id, :photo_id => photo_id, :suite_id => Suite.find_by(:name => suite_name).id).percent}%"
+    else
+    end
+  end
 end

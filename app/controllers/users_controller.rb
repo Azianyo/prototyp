@@ -16,8 +16,12 @@ class UsersController < ApplicationController
         @users_all_points += (usersstat.points*100)/usersstat.percent
         @photos_done << Photo.find(usersstat.photo_id)
       end
-    @users_percentage = (@users_points/@users_all_points)*100
-    @photos_done = @photos_done.uniq
+      if @users_points==0
+        @users_percentage = 0
+      else
+        @users_percentage = (@users_points/@users_all_points)*100
+        @photos_done = @photos_done.uniq
+    end
     else
       @users_percentage = 0
       @users_points = 0

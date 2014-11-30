@@ -9,5 +9,7 @@
     <br>
   <%end%>
 
+<p>You got <%=@points%> points.</p>
   <%=link_to("Home page", root_path)%><br>
   <%=link_to("My profile", user_path(current_user.id))%><br>
+  <%= link_to "Choose a different test", photo_suites_path(@photo)%>

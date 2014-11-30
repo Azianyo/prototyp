@@ -14,7 +14,7 @@
   <%else%>
   <%end%>
     <ul class="nav-list">
-      <li><a href="default.asp">Home</a></li>
+      <li><%=link_to("Home", root_path)%></li>
       <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
       <li><%=link_to("Sign up", new_user_registration_path)%></li>
       <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
@@ -46,13 +46,15 @@
           <% if (current_user.present?) then %>
             <p>7-points checklist:</p>
             <div class="percentage" id="percentage1" style= "width:
-            <%= UsersTestStat.percentage("7-point checklist", current_user.id, photo.id)%>"></div>
+            <%= UsersTestStat.percentage("7-point checklist", current_user.id, photo.id)%>">
+            </div>
             <p>ABCD method:</p>
             <div class="percentage" id="percentage2" style= "width:
-            <%= UsersTestStat.percentage("ABCD method", current_user.id, photo.id)%>"></div>
+            <%= UsersTestStat.percentage("ABCD method", current_user.id, photo.id)%>">
+            </div>
             <p>Type of disease:<br></p>
             <div class="percentage" id="percentage3"style= "width:
-            <%= UsersTestStat.percentage("Type of disease", current_user.id, photo.id)%>"></div>
+            <%= UsersTestStat.percentage("Type of disease", current_user.id, photo.id) %>"></div>
           <%end%>
 
         </div>
