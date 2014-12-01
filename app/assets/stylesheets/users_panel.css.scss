@@ -53,19 +53,18 @@
   }
 }
 
-.nav_list {
+.nav-list {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
   font-size: 16px;
+  padding-left: 230px;
 }
 
 .top-menu {
   background-color: #eae;
   width: 100%;
-  float: left;
   height: 80px;
-  text-align: center;
 }
 
 .dot-img {
