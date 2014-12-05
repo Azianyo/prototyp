@@ -31,7 +31,7 @@ class RepliesController < ApplicationController
 
     params[:answer].each do |key,value|
       Reply.create(:answer_id => value, :user_id => current_user.id)
-      if @photo.send(Question.find(key).parameter) == Answer.find(value).content then
+      if @photo.send(Question.find(key).parameter).to_s == Answer.find(value).content then
         case @photo.level_of_difficulty
           when "high"
             @points += 15
