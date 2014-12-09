@@ -94,3 +94,21 @@
 .sign-up {
   float: right;
 }
+
+#choose-loc-div {
+  position: relative;
+}
+
+#choose-loc {
+  width: 400px;
+  height: 300px;
+  z-index: 1;
+}
+
+.lol {
+  background-color: blue;
+  width: 400px;
+  height:300px;
+  z-index: 2;
+  position: absolute;
+}

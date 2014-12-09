@@ -69,7 +69,6 @@
       <%= form_for(User.new, :as => :user, :url => new_user_session_path) do |f| %>
          Email: <%= f.text_field :email %><br />
          Password : <%= f.password_field :password %><br />
-         Password confirmation: <%= f.password_field :password_confirmation %> <br />
         <%= f.submit %>
       <% end %>
       <%=link_to("Forgot password?", new_user_password_path)%>
@@ -78,8 +77,13 @@
     <%end%>
 
     <h2 class="location-filter" what="lower_limbs">Lower limbs filter</h2>
-    <h2 class="location-filter" what="upper_body"> Upper body filter</h2>
+    <h2 class="location-filter" what="upper_limbs"> Upper body filter</h2>
     <h2 class="difficulty-filter" what="high">High difficulty filter</h2>
     <h2 id="remove-filter">Remove filter</h2>
+    <div id= "choose-loc-div">
+      <%= image_tag("all.png", :id => "choose-loc")%>
+
+    <div class='lol' class="location-filter" what="lower_limbs"></div>
+    </div>
   </div>
 </div>

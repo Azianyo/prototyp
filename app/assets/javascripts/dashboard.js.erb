@@ -1,5 +1,6 @@
 
 
+
 jQuery(document).ready(function() {
     var offset = 100;
     var duration = 500;
@@ -20,10 +21,20 @@ jQuery(document).ready(function() {
     $('.location-filter').click( function() {
         $('.photo-and-patients-info').hide();
         $('.' + ($(this).attr('what'))).show();
+        switch($(this).attr('what')) {
+            case "lower_limbs":
+                document.getElementById('choose-loc').src="<%= asset_path('lowerlimbs.png') %>";
+                break;
+            case "upper_limbs":
+                console.log("test");
+                document.getElementById('choose-loc').src="<%= asset_path('upperlimbs.png') %>";
+                break;
+        }
         });
 
     $('#remove-filter').click( function() {
         $('.photo-and-patients-info').show();
+        document.getElementById('choose-loc').src="<%= asset_path('all.png') %>";
     });
 
     $('.difficulty-filter').click( function() {
@@ -31,4 +42,4 @@ jQuery(document).ready(function() {
         $('.'+($(this).attr('what'))).show();
     });
 
-});
+ });
