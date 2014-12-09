@@ -105,10 +105,42 @@
   z-index: 1;
 }
 
-.lol {
-  background-color: blue;
-  width: 400px;
-  height:300px;
+#lol {
+  background-color: transparent;
+  width: 90px;
+  height:20px;
   z-index: 2;
   position: absolute;
+  top: 155px;
+  left: 8px;
+}
+
+#lol2 {
+  background-color: transparent;
+  width: 100px;
+  height:20px;
+  z-index: 2;
+  position: absolute;
+  top: 215px;
+  left: 15px;
+}
+
+#lol3 {
+  background-color: blue;
+  width: 90px;
+  height:20px;
+  z-index: 2;
+  position: absolute;
+  top: 155px;
+  left: 8px;
+}
+
+#lol4 {
+  background-color: blue;
+  width: 90px;
+  height:20px;
+  z-index: 2;
+  position: absolute;
+  top: 155px;
+  left: 8px;
 }
