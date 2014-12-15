@@ -20,21 +20,43 @@ jQuery(document).ready(function() {
 
     $('.location-filter').click( function() {
         $('.photo-and-patients-info').hide();
-        $('.' + ($(this).attr('what'))).show();
-        switch($(this).attr('what')) {
+        $('.' + ($(this).data('bodypart'))).show();
+        switch($(this).data('bodypart')) {
             case "lower_limbs":
-                document.getElementById('choose-loc').src="<%= asset_path('lowerlimbs.png') %>";
+                $('.choose').hide();
+                $('#choose-loc-lowerlimbs').show();
                 break;
             case "upper_limbs":
-                console.log("test");
-                document.getElementById('choose-loc').src="<%= asset_path('upperlimbs.png') %>";
+                $('.choose').hide();
+                $('#choose-loc-upperlimbs').show();
+                break;
+            case "acral":
+                $('.choose').hide();
+                $('#choose-loc-acral').show();
+                break;
+            case "back":
+                $('.choose').hide();
+                $('#choose-loc-back').show();
+                break;
+            case "abdomen":
+                $('.choose').hide();
+                $('#choose-loc-abdomen').show();
+                break;
+            case "head-neck":
+                $('.choose').hide();
+                $('#choose-loc-headneck').show();
+                break;
+            case "chest":
+                $('.choose').hide();
+                $('#choose-loc-chest').show();
                 break;
         }
         });
 
     $('#remove-filter').click( function() {
         $('.photo-and-patients-info').show();
-        document.getElementById('choose-loc').src="<%= asset_path('all.png') %>";
+        $('.choose').hide();
+        $('#choose-loc-all').show();
     });
 
     $('.difficulty-filter').click( function() {

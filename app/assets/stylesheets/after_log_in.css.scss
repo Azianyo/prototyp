@@ -99,13 +99,45 @@
   position: relative;
 }
 
-#choose-loc {
+.choose {
   width: 400px;
   height: 300px;
   z-index: 1;
 }
 
-#lol {
+#choose-loc-all {
+  display: block;
+}
+
+#choose-loc-lowerlimbs {
+  display: none;
+}
+
+#choose-loc-upperlimbs {
+  display: none;
+}
+
+#choose-loc-acral {
+  display: none;
+}
+
+#choose-loc-headneck {
+  display: none;
+}
+
+#choose-loc-chest {
+  display: none;
+}
+
+#choose-loc-back {
+  display: none;
+}
+
+#choose-loc-abdomen {
+  display: none;
+}
+
+#upperlimbs {
   background-color: transparent;
   width: 90px;
   height:20px;
@@ -115,7 +147,7 @@
   left: 8px;
 }
 
-#lol2 {
+#lowerlimbs {
   background-color: transparent;
   width: 100px;
   height:20px;
@@ -125,22 +157,52 @@
   left: 15px;
 }
 
-#lol3 {
-  background-color: blue;
-  width: 90px;
+#back {
+  background-color: transparent;
+  width: 50px;
   height:20px;
-  z-index: 2;
+  z-index: 3;
   position: absolute;
-  top: 155px;
-  left: 8px;
+  top: 75px;
+  left: 330px;
 }
 
-#lol4 {
-  background-color: blue;
-  width: 90px;
+#acral {
+  background-color: transparent;
+  width: 60px;
   height:20px;
   z-index: 2;
   position: absolute;
-  top: 155px;
-  left: 8px;
+  top: 110px;
+  left: 350px;
+}
+
+#abdomen {
+  background-color: transparent;
+  width: 60px;
+  height:20px;
+  z-index: 2;
+  position: absolute;
+  top: 70px;
+  left: 25px;
+}
+
+#headneck {
+  background-color: transparent;
+  width: 70px;
+  height:20px;
+  z-index: 2;
+  position: absolute;
+  top: 5px;
+  left: 42px;
+}
+
+#chest {
+  background-color: transparent;
+  width: 50px;
+  height:20px;
+  z-index: 2;
+  position: absolute;
+  top: 28px;
+  left: 185px;
 }

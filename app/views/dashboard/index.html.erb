@@ -76,15 +76,24 @@
       <%=link_to("Log out", destroy_user_session_path, method: :delete) %>
     <%end%>
 
-    <h2 class="location-filter" what="lower_limbs">Lower limbs filter</h2>
-    <h2 class="location-filter" what="upper_limbs"> Upper body filter</h2>
     <h2 class="difficulty-filter" what="high">High difficulty filter</h2>
     <h2 id="remove-filter">Remove filter</h2>
     <div id= "choose-loc-div">
-      <%= image_tag("all.png", :id => "choose-loc")%>
-
-    <div id='lol' class="location-filter" what="upper_limbs"></div>
-    <div id= 'lol2' class="location-filter" what="lower_limbs"></div>
+      <%= image_tag("all.png", :id => "choose-loc-all", :class=>"choose")%>
+      <%= image_tag("upperlimbs.png", :id => "choose-loc-upperlimbs", :class=>"choose")%>
+      <%= image_tag("lowerlimbs.png", :id => "choose-loc-lowerlimbs", :class=>"choose")%>
+      <%= image_tag("acral.png", :id => "choose-loc-acral", :class=>"choose")%>
+      <%= image_tag("head-neck.png", :id => "choose-loc-headneck", :class=>"choose")%>
+      <%= image_tag("abdomen.png", :id => "choose-loc-abdomen", :class=>"choose")%>
+      <%= image_tag("chest.png", :id => "choose-loc-chest", :class=>"choose")%>
+      <%= image_tag("back.png", :id => "choose-loc-back", :class=>"choose")%>
+    <div id='upperlimbs' class="location-filter" data-bodypart="upper_limbs"></div>
+    <div id= 'lowerlimbs' class="location-filter" data-bodypart="lower_limbs"></div>
+    <div id= 'back' class="location-filter" data-bodypart="back"></div>
+    <div id= 'acral' class="location-filter" data-bodypart="acral"></div>
+    <div id= 'abdomen' class="location-filter" data-bodypart="abdomen"></div>
+    <div id= 'headneck' class="location-filter" data-bodypart="head-neck"></div>
+    <div id= 'chest' class="location-filter" data-bodypart="chest"></div>
     </div>
   </div>
 </div>
