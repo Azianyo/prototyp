@@ -49,6 +49,7 @@
               <%= UsersTestStat.percentage("7-point checklist", current_user.id, photo.id)%>">
               </div><p class="percent-caption"><%= UsersTestStat.percent_outside("7-point checklist", current_user.id, photo.id) %></p>
             </div>
+
             <p class="percentage-name">ABCD method:</p>
             <div class="grey">
               <div class="percentage" id="percentage2" style= "width:
@@ -56,6 +57,7 @@
               </div>
                 <p class="percent-caption"><%= UsersTestStat.percent_outside("ABCD method", current_user.id, photo.id) %></p>
             </div>
+
             <p class="percentage-name">Type of disease:</p>
             <div class="grey">
               <div class="percentage" id="percentage3"style= "width:
@@ -73,7 +75,7 @@
       <%=image_tag("return.jpg", :class => "return-pic")%>
     </div>
   </div>
-  <div class="col-md-2 sign-up">
+  <div class="col-md-3 sign-up" style="text-align:center">
     <% if !(current_user.present?) then %>
       <%= form_for(User.new, :as => :user, :url => new_user_session_path) do |f| %>
          Email: <%= f.text_field :email %><br />
@@ -85,8 +87,24 @@
       <%=link_to("Log out", destroy_user_session_path, method: :delete) %>
     <%end%>
 
-    <h2 class="difficulty-filter" what="high">High difficulty filter</h2>
-    <h2 id="remove-filter">Remove filter</h2>
+    <h3 id="diff-text">Choose level of diagnostic difficulty:</h2>
+
+    <div id="diff-wrapper">
+      <div id="easy" class="difficulty-filter" what="low">
+        <p>Low</p>
+      </div>
+      <div id="medium" class="difficulty-filter" what="medium">
+        <p>Medium</p>
+      </div>
+      <div id="hard" class="difficulty-filter" what="high">
+        <p>High</p>
+      </div>
+    </div>
+    <br>
+    <div id="remove">
+      <p id="remove-filter">Remove all filters</p>
+    </div>
+    <br>
     <div id= "choose-loc-div">
       <%= image_tag("all.png", :id => "choose-loc-all", :class=>"choose")%>
       <%= image_tag("upperlimbs.png", :id => "choose-loc-upperlimbs", :class=>"choose")%>
