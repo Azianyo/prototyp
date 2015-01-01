@@ -1,28 +1,3 @@
-<nav class="top-menu">
-  <%if current_user.present? %>
-    <div class="users-menu">
-        <%=image_tag("arrow-down.jpg", :class => "drop-down-img")%>
-             <ul class="drop-down-content">
-              <li><a href="#">Photoshop</a></li>
-              <li><a href="#">Illustrator</a></li>
-              <li><a href="#">Web Design</a></li>
-            </ul>
-        <%=link_to("#{current_user.name}", user_path(current_user), :class => "users-name")%>
-        <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
-    </div>
-  <%else%>
-  <%end%>
-    <ul class="nav-list">
-      <li><%=link_to("Home", root_path)%></li>
-      <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
-      <li><%=link_to("Sign up", new_user_registration_path)%></li>
-      <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
-      <li><a href="contact.asp">Contact</a></li>
-      <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
-      <li><a href="about.asp">About</a></li>
-    </ul>
-</nav>
-
 <div class="row container">
   <div class="whitespace col-md-12">
   </div>
