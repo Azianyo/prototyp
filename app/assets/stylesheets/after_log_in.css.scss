@@ -44,8 +44,29 @@
   top: 25px;
 }
 
+.grey {
+  height:15px;
+  width:100%;
+  background-color: grey;
+  // text-align: center;
+  // z-index:1;
+  position:relative;
+}
+
+.percent-caption {
+  // z-index:2;
+  position:absolute;
+  display: block;
+  left:48%;
+  top:0px;
+  // margin:0 auto;
+  // margin-right: auto;
+}
+
 .percentage {
   height: 15px;
+  // z-index:1;
+  // text-align:center;
 }
 
 #percentage1 {

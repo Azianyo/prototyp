@@ -44,16 +44,25 @@
           <%= "Location: #{photo.location}".sub('_',' ')%><br><br></p>
           <% if (current_user.present?) then %>
             <p class="percentage-name">7-points checklist:</p>
-            <div class="percentage" id="percentage1" style= "width:
-            <%= UsersTestStat.percentage("7-point checklist", current_user.id, photo.id)%>">
+            <div class="grey">
+              <div class="percentage" id="percentage1" style= "width:
+              <%= UsersTestStat.percentage("7-point checklist", current_user.id, photo.id)%>">
+              </div><p class="percent-caption"><%= UsersTestStat.percent_outside("7-point checklist", current_user.id, photo.id) %></p>
             </div>
             <p class="percentage-name">ABCD method:</p>
-            <div class="percentage" id="percentage2" style= "width:
-            <%= UsersTestStat.percentage("ABCD method", current_user.id, photo.id)%>">
+            <div class="grey">
+              <div class="percentage" id="percentage2" style= "width:
+              <%= UsersTestStat.percentage("ABCD method", current_user.id, photo.id)%>">
+              </div>
+                <p class="percent-caption"><%= UsersTestStat.percent_outside("ABCD method", current_user.id, photo.id) %></p>
             </div>
             <p class="percentage-name">Type of disease:</p>
-            <div class="percentage" id="percentage3"style= "width:
-            <%= UsersTestStat.percentage("Type of disease", current_user.id, photo.id) %>"></div>
+            <div class="grey">
+              <div class="percentage" id="percentage3"style= "width:
+              <%= UsersTestStat.percentage("Type of disease", current_user.id, photo.id) %>">
+              </div>
+                <p class="percent-caption"><%= UsersTestStat.percent_outside("Type of disease", current_user.id, photo.id) %></p>
+            </div>
           <%end%>
 
         </div>
