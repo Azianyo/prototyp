@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :replies, only: [:index, :create]
-  resources :users, only: [:show, :destroy]
+  resources :users, only: [:show, :destroy, :create]
 
   post 'replies/submit'
 
