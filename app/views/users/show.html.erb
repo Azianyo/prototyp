@@ -29,15 +29,15 @@
             <%= link_to("Change my password", edit_user_password_path)%> </br>
           </div>
         </div>
+        Recently done photos:</br>
+        <div id="nevus-profile-container">
+          <% @photos_done.each do |photo| %>
+            <%= image_tag(photo.picture_url, :class => "photo-log-in nevus-profile")%></br>
+          <%end%>
+        </div>
       <%end%>
     </div>
 
-    <% if current_user.present? && @user == current_user then%>
-        Recently done photos:</br>
-        <% @photos_done.each do |photo| %>
-          <%= image_tag(photo.picture_url, :class => "photo-log-in")%></br>
-        <%end%>
-    <% end %>
 
 
 

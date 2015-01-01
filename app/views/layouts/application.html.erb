@@ -18,14 +18,20 @@
 <nav class="top-menu">
   <%if current_user.present? %>
     <div class="users-menu">
-        <%=image_tag("arrow-down.jpg", :class => "drop-down-img")%>
-             <ul class="drop-down-content">
-              <li><a href="#">Photoshop</a></li>
-              <li><a href="#">Illustrator</a></li>
-              <li><a href="#">Web Design</a></li>
-            </ul>
-        <%=link_to("#{current_user.name}", user_path(current_user), :class => "users-name")%>
-        <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
+          <div class="dropdown">
+             <a class="dropdown-toggle users-name" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                <%="#{current_user.name}"%>
+                <b class="caret"></b>
+              </a>
+              <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="z-index:3">
+                <li><%=link_to("My profile", user_path(current_user), :tabindex => "-1")%></li>
+                <li><a tabindex="-1" href="#">Another action</a></li>
+                <li><a tabindex="-1" href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a tabindex="-1" href="#">Separated link</a></li>
+              </ul>
+          </div>
     </div>
   <%else%>
   <%end%>

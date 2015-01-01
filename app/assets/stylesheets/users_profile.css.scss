@@ -42,11 +42,10 @@
   height:90px;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
+  position: relative;
 }
 
 .action {
-  position: relative;
   width:20%;
   height:90px;
   background-color: green;
@@ -55,9 +54,18 @@
 }
 
 .action-space{
-  position: relative;
   width:20%;
   height:90px;
   display: inline-block;
   float: left;
+}
+
+#nevus-profile-container {
+  width: 90%;
+}
+
+.nevus-profile {
+  display: inline-block;
+  float: left;
+  margin-left: 5%;
 }
