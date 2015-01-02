@@ -2,9 +2,9 @@
     <%=Question.find(answer.question_id).content%><br>
     <%= answer.content%>
     <%if @photo.send(Question.find(answer.question_id).parameter).to_s == answer.content then%>
-      YAY
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
     <%else%>
-      BOO
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
     <%end%>
     <br>
   <%end%>

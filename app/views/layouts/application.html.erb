@@ -16,34 +16,43 @@
 <% end %>
 
 <nav class="top-menu">
-  <%if current_user.present? %>
-    <div class="users-menu">
+  <div class="users-menu">
+  <% if !(current_user.present?) then %>
+      <%= form_for(User.new, :as => :user, :url => new_user_session_path, :id => "logform") do |f| %>
+         <p id="email">Email:</p> <%= f.text_field :email, class: 'input-mini' %><br />
+         <p id="password">Password : <%= f.password_field :password, class: 'input-mini' %></p><br />
+        <%= f.submit %>
+      <% end %>
+      <%=link_to("Forgot password?", new_user_password_path)%>
+    <%else%>
           <div class="dropdown">
              <a class="dropdown-toggle users-name" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
                 <%="#{current_user.name}"%>
                 <b class="caret"></b>
               </a>
               <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="z-index:3">
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="position:absolute">
                 <li><%=link_to("My profile", user_path(current_user), :tabindex => "-1")%></li>
-                <li><a tabindex="-1" href="#">Another action</a></li>
+                <li><%=link_to("Log out", destroy_user_session_path, method: :delete, :tabindex => "-1") %></li>
                 <li><a tabindex="-1" href="#">Something else here</a></li>
                 <li class="divider"></li>
                 <li><a tabindex="-1" href="#">Separated link</a></li>
               </ul>
           </div>
-    </div>
-  <%else%>
   <%end%>
+  </div>
+
     <ul class="nav-list">
+      <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span></li>
       <li><%=link_to("Home", root_path)%></li>
-      <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
+      <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
       <li><%=link_to("Sign up", new_user_registration_path)%></li>
-      <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
+      <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
       <li><a href="contact.asp">Contact</a></li>
-      <li><%=image_tag("dot.jpg", :class => "dot-img")%></li>
+      <li><span class="glyphicon glyphicon-star" aria-hidden="true"></li>
       <li><a href="about.asp">About</a></li>
     </ul>
+
 </nav>
 
 

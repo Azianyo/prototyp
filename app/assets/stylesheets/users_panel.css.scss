@@ -23,12 +23,11 @@ a {
   border-radius: 10px;
   display: inline;
   position: relative;
-
 }
 
 .users-menu {
   height: 70px;
-  width: 250px;
+  width: 400px;
   float: right;
   margin-right: 100px;
   background-color: pink;
@@ -39,16 +38,26 @@ a {
   text-align: center;
 }
 
-.drop-down-content {
-  display: none;
+#email {
+  font-size: 10px;
+  float: left;
 }
 
-.drop-down-img {
-  height: 20px;
-  width: 20px;
-  vertical-align: middle;
-  position: relative;
+#password {
+  font-size: 10px;
+  float: left;
 }
+
+// .drop-down-content {
+//   display: none;
+// }
+
+// .drop-down-img {
+//   height: 20px;
+//   width: 20px;
+//   vertical-align: middle;
+//   position: relative;
+// }
 
 .nav-list li {
   display: inline;
@@ -74,8 +83,8 @@ a {
   height: 80px;
 }
 
-.dot-img {
-  width: 40px;
-  height: 40px;
-}
+// .dot-img {
+//   width: 40px;
+//   height: 40px;
+// }
 

@@ -1,4 +1,8 @@
 <%= image_tag(@photo.picture_url, :id => "big-photo")%>
+<p><%= "Age: #{@photo.age}"%><br>
+          <%= "Sex: #{@photo.sex}" %><br>
+          <%= "Diameter: #{@photo.diameter}" %><br>
+          <%= "Location: #{@photo.location}".sub('_',' ')%><br><br></p>
 <%=form_tag ('/replies/submit') do %>
   <%=hidden_field_tag "photo_id","#{@photo.id}"%>
   <%@questions.each do |question|%>

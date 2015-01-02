@@ -46,21 +46,11 @@
       </div>
       <div class="line"></div>
     <% end %>
-    <div class="return-to-top">
-      <%=image_tag("return.jpg", :class => "return-pic")%>
+     <div class="return-to-top">
+        <span class="glyphicon glyphicon-arrow-up" class="return-pic" aria-hidden="true"></span>
     </div>
   </div>
   <div class="col-md-3 sign-up" style="text-align:center">
-    <% if !(current_user.present?) then %>
-      <%= form_for(User.new, :as => :user, :url => new_user_session_path) do |f| %>
-         Email: <%= f.text_field :email %><br />
-         Password : <%= f.password_field :password %><br />
-        <%= f.submit %>
-      <% end %>
-      <%=link_to("Forgot password?", new_user_password_path)%>
-    <%else%>
-      <%=link_to("Log out", destroy_user_session_path, method: :delete) %>
-    <%end%>
 
     <h3 id="diff-text">Choose level of diagnostic difficulty:</h2>
 
