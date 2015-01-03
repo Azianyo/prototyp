@@ -8,7 +8,7 @@
   <div class="col-md-8" style="text-align:center">
     <h2>Choose the method of diagnosis:<br><br></h2>
     <% @suites.each do |suite|%>
-      <button type="button" class="btn btn-default btn-lg btn-block">
+      <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>  <%=link_to(suite.name, photo_suite_path(@photo,suite))%>
       </button>
       <br>

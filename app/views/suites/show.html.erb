@@ -1,24 +1,48 @@
-<%= image_tag(@photo.picture_url, :id => "big-photo")%>
-<p><%= "Age: #{@photo.age}"%><br>
-          <%= "Sex: #{@photo.sex}" %><br>
-          <%= "Diameter: #{@photo.diameter}" %><br>
-          <%= "Location: #{@photo.location}".sub('_',' ')%><br><br></p>
-<%=form_tag ('/replies/submit') do %>
-  <%=hidden_field_tag "photo_id","#{@photo.id}"%>
-  <%@questions.each do |question|%>
-    <%=question.content%></br>
-
-    <ul>
-      <%question.answers.where(:photo_id => @photo.id).each do |answer|%>
-        <li>
-          <%= radio_button_tag "answer[#{question.id}]","#{answer.id}", :required => true%>
-          <%= answer.content %>
-        </li>
+<div class="row container">
+  <div class="whitespace col-md-12">
+  <br>
+  </div>
+  <div class="col-md-1">
+    &nbsp;
+  </div>
+  <div class="col-md-8" style="text-align:center">
+    <h2><%=@suite.name%></h2>
+    <br>
+    <%=form_tag ('/replies/submit') do %>
+      <%=hidden_field_tag "photo_id","#{@photo.id}"%>
+      <%@questions.each do |question|%>
+        <h3>
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+          <%= "  " + question.content%>
+        </h3><br>
+        <br>
+        <ul>
+          <%question.answers.where(:photo_id => @photo.id).each do |answer|%>
+            <li>
+              <%= radio_button_tag "answer[#{question.id}]","#{answer.id}", :required => true%>
+              <%= answer.content %>
+            </li>
+            <br>
+          <%end%>
+        </ul>
       <%end%>
-    </ul>
-  <%end%>
-  <%= submit_tag ("Submit")%>
-<%end%>
+      <%= submit_tag ("Submit")%>
+    <%end%>
+  </div>
+  <div class="col-md-3 sign-up" style="text-align:center; overflow:visible">
+    <%= image_tag(@photo.picture_url, :id => "big-photo")%>
+    <p><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>  Hover mouse over the photo to see it full size</p>
+    <p><%= "Age: #{@photo.age}"%><br>
+    <%= "Sex: #{@photo.sex}" %><br>
+    <%= "Diameter: #{@photo.diameter}" %><br>
+    <%= "Location: #{@photo.location}".sub('_',' ')%><br><br></p>
+    <%= link_to "Choose test",photo_suites_path%>
+    <br>
+    <%= link_to "Choose photo",root_path%>
+  </div>
+</div>
+
+
 <%= link_to "Choose test",photo_suites_path%>
 <%= link_to "Choose photo",root_path%>
 

@@ -1,7 +1,9 @@
 #big-photo{
   width: 200px;
   height: 200px;
-  float: right;
+  float: top;
+  z-index: 50;
+  position: relative;
 }
 
 #big-photo:hover {
