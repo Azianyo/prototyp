@@ -40,35 +40,30 @@
               </div>
                 <p class="percent-caption"><%= UsersTestStat.percent_outside("Type of disease", current_user.id, photo.id) %></p>
             </div>
-          <%end%>
+
 
         </div>
+        <%end%>
       </div>
-      <div class="line"></div>
+      <div class="line <%=photo.location%> <%=photo.level_of_difficulty%>"></div>
     <% end %>
      <div class="return-to-top">
         <span class="glyphicon glyphicon-arrow-up" class="return-pic" aria-hidden="true"></span>
     </div>
   </div>
-  <div class="col-md-3 sign-up" style="text-align:center">
+  <div class="col-md-3 sign-up" style="text-align:center, z-index:80">
 
-    <h3 id="diff-text">Choose level of diagnostic difficulty:</h2>
+    <h3 id="diff-text">Choose level of diagnostic difficulty:</h3>
 
     <div id="diff-wrapper">
-      <div id="easy" class="difficulty-filter" what="low">
-        <p>Low</p>
-      </div>
-      <div id="medium" class="difficulty-filter" what="medium">
-        <p>Medium</p>
-      </div>
-      <div id="hard" class="difficulty-filter" what="high">
-        <p>High</p>
-      </div>
+      <a href="#" class="round-button easy difficulty-filter" what="low">low</a>
+      <a href="#" class="round-button easy difficulty-filter" what="medium">med</a>
+      <a href="#" class="round-button easy difficulty-filter" what="high">high</a>
+      <a href="#" class="round-button easy" id="remove-filter">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true">
+      </a>
     </div>
     <br>
-    <div id="remove">
-      <p id="remove-filter">Remove all filters</p>
-    </div>
     <br>
     <div id= "choose-loc-div">
       <%= image_tag("all.png", :id => "choose-loc-all", :class=>"choose")%>

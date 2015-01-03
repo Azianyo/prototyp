@@ -20,6 +20,7 @@ jQuery(document).ready(function() {
 
     $('.location-filter').click( function() {
         $('.photo-and-patients-info').hide();
+        $('.line').hide();
         $('.' + ($(this).data('bodypart'))).show();
         switch($(this).data('bodypart')) {
             case "lower_limbs":
@@ -55,12 +56,14 @@ jQuery(document).ready(function() {
 
     $('#remove-filter').click( function() {
         $('.photo-and-patients-info').show();
+        $('.line').show();
         $('.choose').hide();
         $('#choose-loc-all').show();
     });
 
     $('.difficulty-filter').click( function() {
         $('.photo-and-patients-info').hide();
+        $('.line').hide();
         $('.'+($(this).attr('what'))).show();
     });
 

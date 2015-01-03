@@ -5,8 +5,10 @@ a {
 .users-name{
   font-size: 20px;
   display: inline-block;
-  vertical-align: middle;
+  // vertical-align: middle;
   position: relative;
+  top: 50%;
+  // transform: translateY(-50%);
 }
 
 .users-name:hover {
@@ -46,6 +48,11 @@ a {
 #password {
   font-size: 10px;
   float: left;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 99;
 }
 
 // .drop-down-content {

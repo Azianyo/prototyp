@@ -1,3 +1,18 @@
-<% @suites.each do |suite|%>
-<%=link_to(suite.name, photo_suite_path(@photo,suite))%>
-<%end%>
+<div class="row container">
+  <div class="whitespace col-md-12">
+  <br>
+  </div>
+  <div class="col-md-1">
+    &nbsp;
+  </div>
+  <div class="col-md-8" style="text-align:center">
+    <h2>Choose the method of diagnosis:<br><br></h2>
+    <% @suites.each do |suite|%>
+      <button type="button" class="btn btn-default btn-lg btn-block">
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>  <%=link_to(suite.name, photo_suite_path(@photo,suite))%>
+      </button>
+      <br>
+      <br>
+    <%end%>
+  </div>
+</div>
