@@ -1,15 +1,32 @@
-  <%@answers.each do |answer|%>
-    <%=Question.find(answer.question_id).content%><br>
-    <%= answer.content%>
-    <%if @photo.send(Question.find(answer.question_id).parameter).to_s == answer.content then%>
-      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-    <%else%>
-      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-    <%end%>
+  <div class="row container">
+    <div class="whitespace col-md-12">
     <br>
-  <%end%>
+    </div>
+    <div class="col-md-1">
+      &nbsp;
+    </div>
+    <div class="col-md-8" style="text-align:center">
+  <%@answers.each do |answer|%>
+      <%=Question.find(answer.question_id).content%><br>
+      <%if @photo.send(Question.find(answer.question_id).parameter).to_s == answer.content then%>
+        <p class="bg-success text-success"><%= answer.content%></p>
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      <%else%>
+        <p class="text-danger bg-danger"><%= answer.content%></p>
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      <%end%>
+      <br>
+      <br>
+    <%end%>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="col-md-3 sign-up" style="text-align:center">
+    <h2>You got <%=@points%> out of <%=@max_points%> points!</h2>
+      <%=link_to("Home page", root_path)%><br>
+      <%=link_to("My profile", user_path(current_user.id))%><br>
+      <%= link_to "Choose a different test", photo_suites_path(@photo)%>
+    </div>
+  </div>
 
-<p>You got <%=@points%> out of <%=@max_points%> points.</p>
-  <%=link_to("Home page", root_path)%><br>
-  <%=link_to("My profile", user_path(current_user.id))%><br>
-  <%= link_to "Choose a different test", photo_suites_path(@photo)%>
