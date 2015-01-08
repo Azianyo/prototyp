@@ -64,7 +64,9 @@ question_list = [
   [ "Evaluate the border of the nevus?", ABCD_id, "border"],
   [ "Evaluate the color of the nevus?", ABCD_id, "color"],
   [ "Evaluate the dermoscopic structures of the nevus?", ABCD_id, "dermoscopic_structures"],
+  [ "What is the proper management of the nevus?", ABCD_id, "management"],
   [ "What is the type of the nevus?", disease_id, "disease_name"],
+  [ "What is the proper management of the nevus?", disease_id, "management"],
 ]
 
 question_list.each do |content, suite_id, parameter|
@@ -103,12 +105,25 @@ Photo.all.pluck(:id).each do |photo_id|
         (1..5).each do |no|
         Answer.where(content: "#{no}", question_id: question.id, photo_id: photo_id).first_or_create
         end
+      elsif (question.parameter == "management") then
+        Answer.where(content: "no further examination", question_id: question.id, photo_id: photo_id).first_or_create
+        Answer.where(content: "excision", question_id: question.id, photo_id: photo_id).first_or_create
       end
     end
     if(question.suite_id == disease_id) then
-      Answer.where(content: "blue nevus", question_id: question.id, photo_id: photo_id).first_or_create
+      if (question.parameter == "disease_name")
+        Answer.where(content: "blue nevus", question_id: question.id, photo_id: photo_id).first_or_create
+      elsif (question.parameter == "management") then
+        Answer.where(content: "no further examination", question_id: question.id, photo_id: photo_id).first_or_create
+        Answer.where(content: "excision", question_id: question.id, photo_id: photo_id).first_or_create
+      end
     end
   end
+end
+
+AdminUser.create! do |a|
+  a.email = 'admin@example.com'
+  a.password = a.password_confirmation = 'password'
 end
 
 # UsersTestStat.create!([

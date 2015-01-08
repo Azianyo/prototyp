@@ -19,7 +19,8 @@ class UsersController < ApplicationController
       if @users_points==0
         @users_percentage = 0
       else
-        @users_percentage = (@users_points/@users_all_points)*100
+        @users_percentage = (@users_points/@users_all_points)*100.round(2)
+        @users_percentage = sprintf('%.2f', @users_percentage)
         @photos_done = @photos_done.uniq
     end
     else

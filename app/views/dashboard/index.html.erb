@@ -40,10 +40,10 @@
               </div>
                 <p class="percent-caption"><%= UsersTestStat.percent_outside("Type of disease", current_user.id, photo.id) %></p>
             </div>
-
+            <%end%>
 
         </div>
-        <%end%>
+
       </div>
       <div class="line <%=photo.location%> <%=photo.level_of_difficulty%>"></div>
     <% end %>
@@ -51,8 +51,8 @@
         <span class="glyphicon glyphicon-arrow-up" class="return-pic" aria-hidden="true"></span>
     </div>
   </div>
-  <div class="col-md-3 sign-up" style="text-align:center, z-index:80">
-
+  <div class="col-md-3 sign-up" style="text-align:center">
+    <%=link_to("Forgot password?", new_user_password_path)%>
     <h3 id="diff-text">Choose level of diagnostic difficulty:</h3>
 
     <div id="diff-wrapper">
