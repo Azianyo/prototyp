@@ -1,5 +1,13 @@
 <div class="row container">
-  <div class="whitespace col-md-12">
+  <div class="col-md-1">
+      &nbsp;
+    </div>
+  <div class="whitespace col-md-11">
+    <br>
+    <div class="jumbotron">
+      <h1>Hello, world!</h1>
+      <p>This app is a virtual patient</p>
+    </div>
   </div>
   <div class="col-md-1">
     &nbsp;
@@ -52,8 +60,8 @@
     </div>
   </div>
   <div class="col-md-3 sign-up" style="text-align:center">
-    <%=link_to("Forgot password?", new_user_password_path)%>
-    <h3 id="diff-text">Choose level of diagnostic difficulty:</h3>
+  <br>
+    <h4 id="diff-text">Choose level of diagnostic difficulty:</h4>
 
     <div id="diff-wrapper">
       <a href="#" class="round-button easy difficulty-filter" what="low">low</a>
@@ -64,6 +72,7 @@
       </a>
     </div>
     <br>
+    <h4 id="diff-text">Click on a label to choose location:</h4>
     <br>
     <div id= "choose-loc-div">
       <%= image_tag("all.png", :id => "choose-loc-all", :class=>"choose")%>

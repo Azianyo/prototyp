@@ -19,11 +19,17 @@
   <div class="users-menu">
   <% if !(current_user.present?) then %>
       <%= form_for(User.new, :as => :user, :url => new_user_session_path, :id => "logform") do |f| %>
-         <p id="email">Email:</p> <%= f.text_field :email, class: 'input-mini' %><br />
-         <p id="password">Password : <%= f.password_field :password, class: 'input-mini' %></p><br />
-        <%= f.submit %>
+        <div id="forms">
+           <p id="email">Email:</p> <%= f.text_field :email, class: 'input-mini' %><br />
+           <p id="password">Password : <%= f.password_field :password, class: 'input-mini' %></p><br />
+        </div>
+        <div id = "form-buttons">
+          <ul>
+            <li><%=link_to("Forgot password?", new_user_password_path)%></li>
+            <li><%= f.submit %></li>
+          </ul>
+        </div>
       <% end %>
-      <%=link_to("Forgot password?", new_user_password_path)%>
     <%else%>
           <div class="dropdown">
              <a class="dropdown-toggle users-name" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
@@ -46,11 +52,13 @@
       <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span></li>
       <li><%=link_to("Home", root_path)%></li>
       <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-      <li><%=link_to("Sign up", new_user_registration_path)%></li>
+      <li><%=link_to("About", dashboard_about_path)%></li>
       <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-      <li><a href="contact.asp">Contact</a></li>
+      <li><%=link_to("Contact", dashboard_contact_path)%></li>
       <li><span class="glyphicon glyphicon-star" aria-hidden="true"></li>
-      <li><a href="about.asp">About</a></li>
+      <li><%=link_to("Sign up", new_user_registration_path)%></li>
+      <!-- <li><span class="glyphicon glyphicon-star" aria-hidden="true"></li>
+      <li><%=link_to("Forgot password?", new_user_password_path)%></li> -->
     </ul>
 
 </nav>
@@ -58,8 +66,12 @@
 
             <%= yield %>
 
+<br>
+<br>
 
-
+<div class="col-md-12" style="background-color:pink; line-height:10px;">
+  <p style="margin-top:auto; margin-bottom:auto;">Virtual Patient for dermatology by Ada Borzemska, 2015</p>
+</div>
 
 </body>
 </html>

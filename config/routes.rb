@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :destroy, :create]
 
   post 'replies/submit'
+  get 'dashboard/about'
+  get 'dashboard/contact'
+
 
 
 
