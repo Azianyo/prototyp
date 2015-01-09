@@ -52,14 +52,16 @@ jQuery(document).ready(function() {
         }
         });
 
-    $('#remove-filter').click( function() {
+    $('#remove-filter').click( function(event) {
+        event.preventDefault();
         $('.photo-and-patients-info').show();
         $('.line').show();
         $('.choose').hide();
         $('#choose-loc-all').show();
     });
 
-    $('.difficulty-filter').click( function() {
+    $('.difficulty-filter').click( function(event) {
+        event.preventDefault();
         $('.photo-and-patients-info').hide();
         $('.line').hide();
         $('.'+($(this).attr('what'))).show();
