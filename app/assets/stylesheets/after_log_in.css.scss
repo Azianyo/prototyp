@@ -1,21 +1,4 @@
-.round-button {
-    display:block;
-    width:25%;
-    height:50px;
-    line-height:50px;
-    border: 2px solid #f5f5f5;
-    border-radius: 50%;
-    color:#f5f5f5;
-    text-align:center;
-    text-decoration:none;
-    background: #464646;
-    box-shadow: 0 0 3px gray;
-    font-size:20px;
-    font-weight:bold;
-}
-.round-button:hover {
-    background: #262626;
-}
+
 .percentage-name {
   margin: 0 0 0px;
 }
@@ -91,25 +74,16 @@
 }
 
 #percentage1 {
-  background-color: green;
+  background-color: #7CAF5D;
 }
 
 #percentage2 {
-  background-color: blue;
+  background-color: #C9B25E;
 }
 
 #percentage3 {
-  background-color: red;
+  background-color: #C79393;
 }
-
-// .test-div {
-//   background-color: yellow;
-//   float: bottom;
-//   float: right;
-//   width: 200px;
-//   position: absolute;
-//   bottom: 0;
-// }
 
 .line {
   width: 100%;
@@ -147,6 +121,25 @@
   position:relative;
 }
 
+.round-button {
+    display:block;
+    width:25%;
+    height:50px;
+    line-height:50px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #464646;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+}
+.round-button:hover {
+    background: #262626;
+}
+
 .easy {
   // width: 33.33%;
   // height: 80px;
@@ -157,24 +150,40 @@
   float: left;
 }
 
+#easytrue {
+  background: #D5F8C0;
+}
+
+#easytrue:hover {
+  background: #B2F788;
+}
+
 #medium {
-  width: 33.33%;
-  height: 80px;
-  float: left;
-  border-radius: 50%;
-  background-color: orange;
-  text-align: center;
-  display: inline-block;
+  // width: 33.33%;
+  // height: 80px;
+  // float: left;
+  // border-radius: 50%;
+  background: #FBD9AC;
+  // text-align: center;
+  // display: inline-block;
+}
+
+#medium:hover {
+  background: #FCDF7B;
 }
 
 #hard{
-  width: 33.33%;
-  height: 80px;
-  border-radius: 50%;
-  float: left;
-  background-color: red;
-  display: inline-block;
-  text-align: center;
+  // width: 33.33%;
+  // height: 80px;
+  // border-radius: 50%;
+  // float: left;
+  background: #FFD1D7;
+  // display: inline-block;
+  // text-align: center;
+}
+
+#hard:hover {
+  background: #EAAAAB;
 }
 
 #remove {

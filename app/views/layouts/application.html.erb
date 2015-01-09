@@ -22,11 +22,12 @@
         <div id="forms">
            <p id="email">Email:</p> <%= f.text_field :email, class: 'input-mini' %><br />
            <p id="password">Password : <%= f.password_field :password, class: 'input-mini' %></p><br />
+           <%= f.submit %>
         </div>
         <div id = "form-buttons">
           <ul>
             <li><%=link_to("Forgot password?", new_user_password_path)%></li>
-            <li><%= f.submit %></li>
+            <li></li>
           </ul>
         </div>
       <% end %>
@@ -36,7 +37,7 @@
                 <%="#{current_user.name}"%>
                 <b class="caret"></b>
               </a>
-              <%=image_tag("Avatar-blank.jpg", :class => "users-photo")%>
+
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="position:absolute">
                 <li><%=link_to("My profile", user_path(current_user), :tabindex => "-1")%></li>
                 <li><%=link_to("Log out", destroy_user_session_path, method: :delete, :tabindex => "-1") %></li>
@@ -57,8 +58,6 @@
       <li><%=link_to("Contact", dashboard_contact_path)%></li>
       <li><span class="glyphicon glyphicon-star" aria-hidden="true"></li>
       <li><%=link_to("Sign up", new_user_registration_path)%></li>
-      <!-- <li><span class="glyphicon glyphicon-star" aria-hidden="true"></li>
-      <li><%=link_to("Forgot password?", new_user_password_path)%></li> -->
     </ul>
 
 </nav>
@@ -69,9 +68,11 @@
 <br>
 <br>
 
-<div class="col-md-12" style="background-color:pink; line-height:10px;">
+<footer>
+<!-- <div class="col-md-12" style="background-color:pink; line-height:10px; float: bottom;"> -->
   <p style="margin-top:auto; margin-bottom:auto;">Virtual Patient for dermatology by Ada Borzemska, 2015</p>
-</div>
+<!-- </div> -->
+</footer>
 
 </body>
 </html>
