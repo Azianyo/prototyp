@@ -55,6 +55,8 @@ a {
 .dropdown-menu {
   position: absolute;
   z-index: 99;
+  float: left;
+  transform: translate(50%);
 }
 
 
