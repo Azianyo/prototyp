@@ -39,6 +39,9 @@ gem 'pry'
 gem 'pry-rails'
 gem 'better_errors'
 gem 'rails_12factor', group: :production
+group :development, :test do
+gem 'foreman'
+end
 ruby "2.1.2"
 
 # Use ActiveModel has_secure_password
