@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20150109193304) do
     t.string   "elevation"
     t.string   "global_feature"
     t.string   "pigment_network"
+    t.string   "dots_and_globules"
     t.string   "streaks"
     t.string   "blue_whitish_veil"
     t.string   "pigmentation"
